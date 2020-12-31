@@ -1,15 +1,29 @@
 import collections
 import functools
-from typing import List
+from typing import Callable, List
 
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
+def partition(A: List[int], pred: Callable[[int], bool]) -> None:
+    sp, end = 0, len(A)
+
+    # invariant
+    # A[0..sp) satisfies the predictable
+    # A[sp..e) does nor satisfy the predicate
+
+    while sp < end:
+        if pred(A[sp]):
+            sp += 1
+        else:
+            A[sp], A[end - 1] = A[end - 1], A[sp]
+            end -= 1
+
+
 
 def even_odd(A: List[int]) -> None:
-    # TODO - you fill in here.
-    return
+    partition(A, lambda x: x % 2 == 0)
 
 
 @enable_executor_hook
