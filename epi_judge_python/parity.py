@@ -11,6 +11,17 @@ def count_bits(x: int) -> int:
 def parity(x: int) -> int:
     return count_bits(x) % 2
 
+def parity2(x: int) -> int:
+    x ^= x >> 64
+    x ^= x >> 32
+    x ^= x >> 16
+    x ^= x >> 8
+    x ^= x >> 4
+    x ^= x >> 2
+    x ^= x >> 1
+
+    return x & 1
 
 if __name__ == '__main__':
-    exit(generic_test.generic_test_main('parity.py', 'parity.tsv', parity))
+    generic_test.generic_test_main('parity.py', 'parity.tsv', parity)
+    exit(generic_test.generic_test_main('parity.py', 'parity.tsv', parity2))
