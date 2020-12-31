@@ -65,7 +65,7 @@ problem_mapping = {
                 "passed": 0,
                 "total": 10000
             },
-            "Python: closest_int_same_weight.py": { 
+            "Python: closest_int_same_weight.py": {
                 "passed": 0,
                 "total": 10000
             }
@@ -2380,7 +2380,7 @@ problem_mapping = {
                 "total": 103
             },
             "Python: two_sum.py": {
-                "passed": 0,
+                "passed": 1005,
                 "total": 1005
             }
         },
@@ -2394,7 +2394,7 @@ problem_mapping = {
                 "total": 1008
             },
             "Python: three_sum.py": {
-                "passed": 0,
+                "passed": 1008,
                 "total": 1008
             }
         },
